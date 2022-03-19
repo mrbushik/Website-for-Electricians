@@ -10,7 +10,7 @@ const callsModal = () => {
         modalOverlay.style.display = 'block';
 
     });
-    close.addEventListener('click', () => {
+    modal.addEventListener('click', () => {
         modal.style.display = 'none';
         modalOverlay.style.display = 'none';
     });

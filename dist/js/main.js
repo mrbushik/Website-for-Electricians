@@ -16,7 +16,7 @@
   \******************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_callsModal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/callsModal */ \"./modules/callsModal.js\");\n\r\n(0,_modules_callsModal__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\n\n//# sourceURL=webpack:///./index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_callsModal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/callsModal */ \"./modules/callsModal.js\");\n/* harmony import */ var _modules_pageOrientation__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/pageOrientation */ \"./modules/pageOrientation.js\");\n\r\n\r\n(0,_modules_callsModal__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\r\n(0,_modules_pageOrientation__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\n\n//# sourceURL=webpack:///./index.js?");
 
 /***/ }),
 
@@ -26,7 +26,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _mod
   \*******************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst callsModal = () => {\r\n    const orderCallBtn = document.querySelectorAll('.callback-btn ');\r\n    const modal = document.querySelector('.modal-callback ');\r\n    const modalOverlay = document.querySelector('.modal-overlay');\r\n    const close = document.querySelector('.modal-close');\r\n\r\n\r\n    orderCallBtn[1].addEventListener('click', () => {\r\n        modal.style.display = 'block';\r\n        modalOverlay.style.display = 'block';\r\n\r\n    });\r\n    close.addEventListener('click', () => {\r\n        modal.style.display = 'none';\r\n        modalOverlay.style.display = 'none';\r\n    });\r\n    modalOverlay.addEventListener('click', () => {\r\n        modal.style.display = 'none';\r\n        modalOverlay.style.display = 'none';\r\n    });\r\n\r\n\r\n};\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (callsModal);\n\n//# sourceURL=webpack:///./modules/callsModal.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst callsModal = () => {\r\n    const orderCallBtn = document.querySelectorAll('.callback-btn ');\r\n    const modal = document.querySelector('.modal-callback ');\r\n    const modalOverlay = document.querySelector('.modal-overlay');\r\n    const close = document.querySelector('.modal-close');\r\n\r\n\r\n    orderCallBtn[1].addEventListener('click', () => {\r\n        modal.style.display = 'block';\r\n        modalOverlay.style.display = 'block';\r\n\r\n    });\r\n    modal.addEventListener('click', () => {\r\n        modal.style.display = 'none';\r\n        modalOverlay.style.display = 'none';\r\n    });\r\n    modalOverlay.addEventListener('click', () => {\r\n        modal.style.display = 'none';\r\n        modalOverlay.style.display = 'none';\r\n    });\r\n\r\n\r\n};\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (callsModal);\n\n//# sourceURL=webpack:///./modules/callsModal.js?");
+
+/***/ }),
+
+/***/ "./modules/pageOrientation.js":
+/*!************************************!*\
+  !*** ./modules/pageOrientation.js ***!
+  \************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst pageOrientation = () => {\r\n    const menuItem = document.querySelector('.top-menu');\r\n    const menuLink = menuItem.querySelectorAll('a');\r\n\r\n\r\n    menuLink[0].addEventListener('click', (e) => {\r\n        e.preventDefault();\r\n        window.scrollTo(0, 550);\r\n    });\r\n    menuLink[1].addEventListener('click', (e) => {\r\n        e.preventDefault();\r\n        window.scrollTo(0, 3525);\r\n    });\r\n    menuLink[2].addEventListener('click', (e) => {\r\n        e.preventDefault();\r\n        window.scrollTo(0, 4045);\r\n    });\r\n\r\n};\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (pageOrientation);\n\n//# sourceURL=webpack:///./modules/pageOrientation.js?");
 
 /***/ })
 
