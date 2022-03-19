@@ -27,10 +27,23 @@ const pageOrientation = () => {
         if (window.pageYOffset > 350) {
             toUpBtn.style.display = 'block';
         }
-        toUpBtn.addEventListener('click', () => {
-            window.scrollTo(0, 0);
-        });
+
     });
+    // smoothScroll
+    toUpBtn.addEventListener('click', () => {
+
+        const timeToUp = setInterval(() => {
+            let currentPagePosition = window.pageYOffset;
+            let position = currentPagePosition - 50;
+            window.scrollTo(0, position);
+            if (currentPagePosition <= 0) {
+                clearInterval(timeToUp);
+                console.log('end');
+            }
+        }, 10);
+
+    });
+
 
 
 };
