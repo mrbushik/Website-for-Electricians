@@ -3,7 +3,7 @@ const callsModal = () => {
     const modal = document.querySelector('.modal-callback ');
     const modalOverlay = document.querySelector('.modal-overlay');
     const close = document.querySelector('.modal-close');
-    const helpBtn = document.querySelector('.button-services')
+    const helpBtn = document.querySelector('.button-services');
 
 
     orderCallBtn[1].addEventListener('click', () => {
