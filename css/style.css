@@ -1386,6 +1386,9 @@ video#video_background {
 /* .services-elements img {
 	width: 100%;
 } */
+.slide__item {
+	display: none;
+}
 
 .services-elements>.row>hr:nth-of-type(2n) {
 	clear: both;

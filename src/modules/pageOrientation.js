@@ -23,7 +23,6 @@ const pageOrientation = () => {
             const timeToUp = setInterval(() => {
                 let currentPagePosition = window.pageYOffset;
                 let position = currentPagePosition - 50;
-                let check = window.pageYOffset < target;
                 window.scrollTo(0, position);
                 if (currentPagePosition <= target) {
                     clearInterval(timeToUp);
