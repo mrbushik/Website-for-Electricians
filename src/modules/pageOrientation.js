@@ -4,18 +4,47 @@ const pageOrientation = () => {
     const toUpBtn = document.querySelector('.up');
 
 
+    //animation function
+    const animationTransition = (target) => {
+        let currentPagePosition = window.pageYOffset;
+        if (currentPagePosition < target) {
+            let stop = target - 50;
+            const timeToUp = setInterval(() => {
+                let currentPagePosition = window.pageYOffset;
+                let position = currentPagePosition + 50;
+                let check = window.pageYOffset < target;
+                window.scrollTo(0, position);
+                if (currentPagePosition > stop) {
+                    clearInterval(timeToUp);
+                }
+            }, 10);
+        }
+        if (currentPagePosition > target) {
+            const timeToUp = setInterval(() => {
+                let currentPagePosition = window.pageYOffset;
+                let position = currentPagePosition - 50;
+                let check = window.pageYOffset < target;
+                window.scrollTo(0, position);
+                if (currentPagePosition <= target) {
+                    clearInterval(timeToUp);
+                }
+            }, 10);
+        }
+    };
+
     //header link
     menuLink[0].addEventListener('click', (e) => {
         e.preventDefault();
-        window.scrollTo(0, 550);
+        animationTransition(550);
+
     });
     menuLink[1].addEventListener('click', (e) => {
         e.preventDefault();
-        window.scrollTo(0, 3525);
+        animationTransition(3025);
     });
     menuLink[2].addEventListener('click', (e) => {
         e.preventDefault();
-        window.scrollTo(0, 4045);
+        animationTransition(3350);
     });
 
 
@@ -32,15 +61,7 @@ const pageOrientation = () => {
     // smoothScroll
     toUpBtn.addEventListener('click', () => {
 
-        const timeToUp = setInterval(() => {
-            let currentPagePosition = window.pageYOffset;
-            let position = currentPagePosition - 50;
-            window.scrollTo(0, position);
-            if (currentPagePosition <= 0) {
-                clearInterval(timeToUp);
-                console.log('end');
-            }
-        }, 10);
+        animationTransition(0);
 
     });
 
