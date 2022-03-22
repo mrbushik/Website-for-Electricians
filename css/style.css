@@ -1383,9 +1383,9 @@ video#video_background {
 	overflow: hidden;
 }
 
-.services-elements img {
+/* .services-elements img {
 	width: 100%;
-}
+} */
 
 .services-elements>.row>hr:nth-of-type(2n) {
 	clear: both;

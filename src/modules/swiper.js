@@ -12,5 +12,13 @@ const swiper = () => {
         },
 
     });
+    var swiper2 = new Swiper(".mySwiper2", {
+        slidesPerView: 3,
+        spaceBetween: 30,
+        navigation: {
+            nextEl: ".arrow-right",
+            prevEl: ".arrow-left",
+        },
+    });
 };
 export default swiper;
