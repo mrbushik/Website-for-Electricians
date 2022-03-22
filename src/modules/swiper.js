@@ -12,6 +12,7 @@ const swiper = () => {
         if (count == 1) {
             slideItem[2].style.display = 'none';
             slideItem[0].style.display = 'block';
+            slideText[0].classList.add('active');
         }
         if (count == 2) {
             slideItem[0].style.display = 'none';
