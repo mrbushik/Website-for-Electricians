@@ -536,6 +536,10 @@ a.absolute {
 	right: 25px;
 }
 
+.slide__item_card {
+	margin-right: 48px;
+}
+
 .callback-btn {
 	padding: 0 30px;
 	height: 64px;
@@ -589,6 +593,10 @@ a.absolute {
 
 .icons .element {
 	margin-bottom: 40px;
+}
+
+.slider__img {
+	width: 100%;
 }
 
 .icons .element .img-wrapper {
