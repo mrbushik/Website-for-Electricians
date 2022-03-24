@@ -1,14 +1,10 @@
 'use strict';
 const modal = () => {
+    let counter = 0;
     const name = document.querySelector('.input__name');
     const phone = document.querySelector('.input__phone');
     const form = document.querySelector('.lead__form');
-    name.addEventListener('input', (e) => {
-        e.target.value = e.target.value.replace(/[^а-яА-Я]/, '');
-    });
-    phone.addEventListener('input', (e) => {
-        e.target.value = e.target.value.replace(/[^\d\+]/, '');
-    });
+
     const statusBlock = document.createElement('div');
     statusBlock.className = 'statusBlock';
     statusBlock.style.color = 'black';
@@ -16,6 +12,28 @@ const modal = () => {
     const loadText = 'загрузка...';
     const errorText = 'Ошибка...';
     const successText = 'Спасибо, наш менеджер с вами свяжется';
+
+
+    name.addEventListener('input', (e) => {
+        e.target.value = e.target.value.replace(/[^а-яА-Я]/, '');
+        if (counter >= 1 && e.target.value.length >= 2) {
+            name.classList.remove('error');
+
+        }
+    });
+
+    phone.addEventListener('input', (e) => {
+        e.target.value = e.target.value.replace(/[^\d\+]/, '');
+
+        if (counter >= 1 && e.target.value.length > 16) {
+
+            phone.classList.add('error');
+        } else if (counter >= 1 && e.target.value.length >= 4) {
+            phone.classList.remove('error');
+
+        }
+    });
+
     const deleteStatusBlock = () => {
         statusBlock.textContent = '';
     };
@@ -25,16 +43,15 @@ const modal = () => {
         let success = true;
         list.forEach((input) => {
             //   if (!input.classList.contains('success')) {
-            if (input.value.trim() === '') {
+            if (name.value.length < 2) {
                 success = false;
-                //проверка на буквы в имени
 
-            } else if (name.value.length < 2) {
-                success = false;
 
                 //проверка на количество цифр в номере
             } else if (phone.value.length < 4 || phone.value.length > 16) {
                 success = false;
+
+
             }
         });
         return success;
@@ -63,22 +80,34 @@ const modal = () => {
         });
 
         if (validate(formElements)) {
+
             sendData(formBody)
                 .then(data => {
 
                     statusBlock.textContent = successText;
                     setTimeout(deleteStatusBlock, 3000);
+                    counter = 0;
                     formElements.forEach(input => {
                         input.value = '';
                     });
                 })
+
                 .catch(error => {
                     statusBlock.textContent = errorText;
                 });
+
         } else {
             statusBlock.textContent = errorText;
             setTimeout(deleteStatusBlock, 3000);
-            alert('заполните все формы');
+
+            if (phone.value.length < 4 || phone.value.length > 16) {
+                phone.classList.add('error');
+            }
+
+            if (name.value.length < 2) {
+                name.classList.add('error');
+
+            }
 
         }
     };
@@ -89,7 +118,7 @@ const modal = () => {
         form.addEventListener('submit', (e) => {
             e.preventDefault();
             submitForm();
-
+            counter++;
         });
     } catch (error) {
         console.log(error.message);
