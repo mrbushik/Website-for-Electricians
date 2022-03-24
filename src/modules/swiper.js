@@ -38,6 +38,7 @@ const swiper = () => {
 
         slidesPerView: 'auto',
         // setWrapperSize: true,
+        centerSlides: true,
 
         navigation: {
             nextEl: ".arrow-right",
