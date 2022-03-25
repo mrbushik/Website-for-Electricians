@@ -12,13 +12,14 @@ const slider = () => {
 
 
     table[0].classList.add('active');
-
+    dotsList.style.marginTop = -35 + 'px';
 
     //создание dots
     const createDots = () => {
         while (quantityDots) {
             let dotsElem = document.createElement('li');
             dotsElem.classList.add('dot');
+
             dotsList.append(dotsElem);
             dots.push(dotsElem);
             quantityDots--;
